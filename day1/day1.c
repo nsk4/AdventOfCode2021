@@ -10,20 +10,20 @@ void part1()
     count = 0;
     rc = fscanf(fp, "%d", &prevNum);
     if (rc == EOF)
-        goto end;
+        goto end1;
 
-loop:
+loop1:
     rc = fscanf(fp, "%d", &currNum);
+    if (rc == EOF)
+        goto end1;
     if (currNum > prevNum)
         ++count;
 
     prevNum = currNum;
 
-    if (rc == EOF)
-        goto end;
-    goto loop;
+    goto loop1;
 
-end:
+end1:
     printf("%d\n", count);
     fclose(fp);
 }
@@ -39,18 +39,18 @@ void part2()
 
     rc = fscanf(fp, "%d", &val1);
     if (rc == EOF)
-        goto end;
+        goto end2;
     rc = fscanf(fp, "%d", &val2);
     if (rc == EOF)
-        goto end;
+        goto end2;
     rc = fscanf(fp, "%d", &val3);
     if (rc == EOF)
-        goto end;
+        goto end2;
 
-loop:
+loop2:
     rc = fscanf(fp, "%d", &nextVal);
     if (rc == EOF)
-        goto end;
+        goto end2;
 
     if (val1 + val2 + val3 < val2 + val3 + nextVal)
         ++count;
@@ -58,9 +58,9 @@ loop:
     val1 = val2;
     val2 = val3;
     val3 = nextVal;
-    goto loop;
+    goto loop2;
 
-end:
+end2:
     printf("%d\n", count);
     fclose(fp);
 }

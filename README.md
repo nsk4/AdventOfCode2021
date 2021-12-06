@@ -8,3 +8,7 @@ Limitation of not using else cases makes any non-trivial condition a mess.
 
 ## Day 3
 Giant label mess. Complex conditions and nested loops make whole code very hard to read. Upfront declarations make handling of variables confusing.
+
+## Day 4
+fscanf is a mess. It works in misterious ways. Half of the time went for this...
+

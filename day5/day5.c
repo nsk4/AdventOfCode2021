@@ -109,7 +109,6 @@ initFloorXEnd2:
 
 readInput2:
     rc = fscanf(fp, "%d,%d -> %d,%d", &x1, &y1, &x2, &y2);
-    //printf("%d %d %d %d\n", x1, y1, x2, y2);
     if (rc == EOF)
         goto readInputEnd2;
 
